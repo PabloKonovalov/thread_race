@@ -35,6 +35,11 @@ public class FileSystemManager {
 
         if (value == null) {
             fileWriter.append(name).append(" Выиграл\n");
+            if ("Поток А".equals(name)) {
+                fileWriter.append("Поток Б").append(" Проиграл\n");
+            } else {
+                fileWriter.append("Поток А").append(" Проиграл\n");
+            }
 
             fileWriter.flush();
             fileWriter.close();
@@ -42,7 +47,7 @@ public class FileSystemManager {
             Set<Thread> setOfThread = Thread.getAllStackTraces().keySet();
 
             for (Thread thread : setOfThread) {
-                if (thread.getName().equals("Поток А") || thread.getName().equals("Поток B")) {
+                if (thread.getName().equals("Поток А") || thread.getName().equals("Поток Б")) {
                     thread.interrupt();
                 }
             }

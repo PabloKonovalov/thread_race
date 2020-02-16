@@ -26,7 +26,7 @@ public class Main {
             FileSystemManager.getInstance().createFile();
 
             Thread testThreadA = makeNewThread("Поток А");
-            Thread testThreadB = makeNewThread("Поток B");
+            Thread testThreadB = makeNewThread("Поток Б");
 
             startAllThreads(testThreadA, testThreadB);
             stopAllThreads(testThreadA, testThreadB);
